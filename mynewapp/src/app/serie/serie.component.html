@@ -10,18 +10,29 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let s of series">
+        <ng-container *ngFor="let s of series; let i = index">
+          <tr>
+            <td>
+              <dd>{{s.id}}</dd>
+            </td>
+            <td>
+              <dd>{{s.name}}</dd>
+            </td>
+            <td>
+              <dd>{{s.channel}}</dd>
+            </td>
+            <td>
+              <dd>{{s.seasons}}</dd>
+            </td>
+          </tr>
+        </ng-container>
+        <tr>
+          <td colspan="1"></td>
           <td>
-            <dd>{{s.id}}</dd>
+            <dd>Promedio de todas las seasons</dd>
           </td>
           <td>
-            <dd>{{s.name}}</dd>
-          </td>
-          <td>
-            <dd>{{s.channel}}</dd>
-          </td>
-          <td>
-            <dd>{{s.seasons}}</dd>
+            <dd>{{calculateTotalAverage()}}</dd>
           </td>
         </tr>
       </tbody>
